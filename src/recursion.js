@@ -122,7 +122,20 @@ var reverse = function(string) {
 
 // 10. Write a function that determines if a string is a palindrome.
 var palindrome = function(string) {
+  const sanitizeString = (string) => {
+    return string.toLowerCase().replace(/\s+/g, '');
+  }
+
+  string = sanitizeString(string)
+  
+  if(string.length <= 1) {
+    return true;
+  }
+
+  return string.slice(0, 1) === string.slice(-1) ? palindrome(string.slice(1, -1)) : false;
 };
+
+palindrome("racecar");
 
 // 11. Write a function that returns the remainder of x divided by y without using the
 // modulo (%) operator.
