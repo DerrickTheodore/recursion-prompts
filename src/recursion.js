@@ -102,9 +102,12 @@ var exponent = function(base, exp) {
 var powerOfTwo = function(n) {
   if(n === 1) {
     return true;
-  } else {
+  } 
+
+  if(n < 1) {
     return false;
-  }
+  } 
+  
   return powerOfTwo(n / 2);
 };
 
